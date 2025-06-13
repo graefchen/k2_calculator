@@ -2,7 +2,7 @@
 
 Projekt Nummer Zwei der Kotlin Reihe für Basissysteme der Informationsverarbeitung II.
 
-Eine einfache Einkaufslistenapp.
+Eine einfache Umrechnungsapp.
 
 ## Funktionale Anforderungen
 
