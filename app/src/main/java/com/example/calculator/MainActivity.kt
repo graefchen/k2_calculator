@@ -12,10 +12,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -84,14 +84,14 @@ fun Calculator(modifier: Modifier = Modifier) {
                 modifier = padding
             )
             Button(onClick = {
-                resolution = calcPitch(getInteger(text).toFloat())
-            }) { Text("Fläche in Fußballfelder") }
+                if (!text.isEmpty()) resolution = calcPitch(getInteger(text).toFloat())
+            }) { Text("Fläche (m²) in Fußballfelder") }
             Button(onClick = {
-                resolution = calcAge(getInteger(text))
-            }) { Text("Alter in Minuten") }
+                if (!text.isEmpty()) resolution = calcAge(getInteger(text))
+            }) { Text("Alter (Jahre) in Minuten") }
             Button(onClick = {
-                resolution = calcMoney(getInteger(text))
-            }) { Text("Geld in Zeit") }
+                if (!text.isEmpty()) resolution = calcMoney(getInteger(text))
+            }) { Text("Geld (Cent) in Zeit") }
             OutlinedTextField(
                 value = resolution,
                 readOnly = true,
